@@ -23,4 +23,5 @@ class Ship {
     public ShipValue getValue() {
         return value;
     }
+
 }
