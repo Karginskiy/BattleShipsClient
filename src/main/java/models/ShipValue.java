@@ -1,8 +1,8 @@
 package models;
 
-enum ShipValue {
+public enum ShipValue {
 
-    FourDecked(4), ThreeDecked(3), DoubleDecked(2), SingleDecked(1);
+    FourDecked(4), ThreeDecked(3), DoubleDecked(2), SingleDecked(1), Shot(0);
     private int decks;
 
     ShipValue(int decks) {
