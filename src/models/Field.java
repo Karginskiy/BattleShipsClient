@@ -20,6 +20,7 @@ public class Field {
 
         for (Point point: ship.getShip()) {
             checkForEmpty(point);
+            checkForNearEmpty(point);
         }
 
         for (Point point: ship.getShip()) {
@@ -56,7 +57,4 @@ public class Field {
         }
         return true;
     }
-
-
-
 }
