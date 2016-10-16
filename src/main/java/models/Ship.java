@@ -12,15 +12,15 @@ class Ship {
         this.ship = new Point[size];
     }
 
-    Point[] getShip() {
-        return this.ship;
-    }
-
     public int getSize() {
         return size;
     }
 
-    public ShipValue getValue() {
+    Point[] getShip() {
+        return this.ship;
+    }
+
+    ShipValue getValue() {
         return value;
     }
 
