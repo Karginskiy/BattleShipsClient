@@ -1,6 +1,6 @@
 package models;
 
-class Ship {
+public class Ship {
 
     private final Point[] ship;
     private final int size;
