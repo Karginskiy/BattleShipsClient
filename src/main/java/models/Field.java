@@ -4,16 +4,12 @@ import exceptions.AlreadyOccupiedPointException;
 
 public class Field {
 
-    final private ShipValue[][] field;
-    final private int size;
+    private final ShipValue[][] field;
+    public static int SIZE;
 
     public Field(int size) {
-        this.size = size;
+        Field.SIZE = size;
         this.field = new ShipValue[size][size];
-    }
-
-    public int getSize() {
-        return this.size;
     }
 
     public void setShip(Ship ship) throws AlreadyOccupiedPointException {
@@ -29,8 +25,12 @@ public class Field {
 
     }
 
-    private ShipValue getPoint(Point point) {
+    public ShipValue getPoint(Point point) {
         return field[point.getX()][point.getY()];
+    }
+
+    public void setPoint(Point point, ShipValue value) {
+        field[point.getX()][point.getY()] = value;
     }
 
     private boolean checkForEmpty(Point point) throws AlreadyOccupiedPointException {
