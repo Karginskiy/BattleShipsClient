@@ -1,6 +1,6 @@
-package models;
+package frontend.models;
 
-import exceptions.AlreadyOccupiedPointException;
+import frontend.exceptions.AlreadyOccupiedPointException;
 
 public class Field {
 

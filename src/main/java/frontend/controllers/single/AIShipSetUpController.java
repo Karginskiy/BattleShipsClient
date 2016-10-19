@@ -1,4 +1,4 @@
-package controllers.single;
+package frontend.controllers.single;
 
 public class AIShipSetUpController {
 }

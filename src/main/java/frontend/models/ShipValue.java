@@ -1,4 +1,4 @@
-package models;
+package frontend.models;
 
 public enum ShipValue {
 

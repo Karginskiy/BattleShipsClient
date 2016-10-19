@@ -1,6 +1,6 @@
-package controllers.single;
+package frontend.controllers.single;
 
-import models.Field;
+import frontend.models.Field;
 
 public class HumanMoveController extends AbstractMoveController {
 

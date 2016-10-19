@@ -1,4 +1,4 @@
-package views;
+package frontend.views;
 
 public class AIPlayerFieldView {
 }

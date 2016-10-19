@@ -1,4 +1,4 @@
-package exceptions;
+package frontend.exceptions;
 
 public class AlreadyOccupiedPointException extends Exception {
 

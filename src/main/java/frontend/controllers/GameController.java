@@ -1,6 +1,6 @@
-package controllers;
+package frontend.controllers;
 
-import models.Field;
+import frontend.models.Field;
 
 public class GameController {
 

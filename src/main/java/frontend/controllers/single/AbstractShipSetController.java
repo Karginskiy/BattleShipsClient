@@ -1,8 +1,8 @@
-package controllers.single;
+package frontend.controllers.single;
 
-import exceptions.AlreadyOccupiedPointException;
-import models.Field;
-import models.Ship;
+import frontend.exceptions.AlreadyOccupiedPointException;
+import frontend.models.Field;
+import frontend.models.Ship;
 
 public abstract class AbstractShipSetController {
 

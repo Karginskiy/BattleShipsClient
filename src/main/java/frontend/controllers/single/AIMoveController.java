@@ -1,9 +1,9 @@
-package controllers.single;
+package frontend.controllers.single;
 
-import exceptions.AlreadyShotPointException;
-import models.Field;
-import models.Point;
-import models.ShipValue;
+import frontend.exceptions.AlreadyShotPointException;
+import frontend.models.Field;
+import frontend.models.Point;
+import frontend.models.ShipValue;
 
 import java.util.Random;
 
