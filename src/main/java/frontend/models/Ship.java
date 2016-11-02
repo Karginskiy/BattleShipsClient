@@ -2,14 +2,19 @@ package frontend.models;
 
 public class Ship {
 
-    private final Point[] ship;
+    private Point[] ship;
     private final int size;
     private final ShipValue value;
+    private final Orientation orientation;
+    private final Point startPoint;
 
-    public Ship(int size, ShipValue value) {
-        this.size = size;
-        this.value = value;
-        this.ship = new Point[size];
+    public Ship(Point startPoint, Orientation orientation) {
+        this.value = startPoint.getValue();
+        this.ship = new Point[value.getDecks()];
+        this.size = value.getDecks();
+        this.orientation = orientation;
+        this.startPoint = startPoint;
+        initShip();
     }
 
     public int getSize() {
@@ -22,6 +27,24 @@ public class Ship {
 
     ShipValue getValue() {
         return value;
+    }
+
+    private void initShip() {
+        int x = startPoint.getX();
+        int y = startPoint.getY();
+        ship[0] = startPoint;
+        switch (orientation) {
+            case HORIZONTAL:
+                for (int i = 1; i < size; i++) {
+                    ship[i] = new Point(x + i, y, value);
+                }
+                break;
+            case VERTICAL:
+                for (int i = 0; i < size; i++) {
+                    ship[i] = new Point(x, y + i, value);
+                }
+                break;
+        }
     }
 
 }
