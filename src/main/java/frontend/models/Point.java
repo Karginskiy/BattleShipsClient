@@ -4,6 +4,7 @@ public class Point {
 
     private final int x;
     private final int y;
+    private ShipValue value;
 
     public Point(int x, int y) {
         this.x = x;
