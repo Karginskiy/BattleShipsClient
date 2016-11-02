@@ -20,7 +20,8 @@ public class AIMoveController extends AbstractMoveController {
         while (true) {
             try {
                 checkForShot(point);
-                if (field.getPoint(point).getDecks() >= 1) {
+                if (field.getPoint(point.getX(), point.getY())
+                         .getValue().getDecks() >= 1) {
                     field.setPoint(point, ShipValue.Shot);
                     return true;
                 } else {
@@ -38,7 +39,7 @@ public class AIMoveController extends AbstractMoveController {
     }
 
     private boolean checkForShot(Point point) throws AlreadyShotPointException {
-        if (field.getPoint(point) == ShipValue.Shot) {
+        if (field.getPoint(point.getX(), point.getY()).getValue() == ShipValue.Shot) {
             throw new AlreadyShotPointException();
         } else {
             return true;
