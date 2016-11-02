@@ -1,16 +1,17 @@
 package frontend.controllers.single;
 
+import frontend.exceptions.AlreadyOccupiedPointException;
 import frontend.exceptions.AlreadyShotPointException;
-import frontend.models.Field;
-import frontend.models.Point;
-import frontend.models.ShipValue;
+import frontend.models.*;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class AIMoveController extends AbstractMoveController {
 
-    protected AIMoveController(Field field) {
+    public AIMoveController(Field field) {
         super(field);
+        setShips();
     }
 
     public boolean shot() {
@@ -43,6 +44,22 @@ public class AIMoveController extends AbstractMoveController {
             throw new AlreadyShotPointException();
         } else {
             return true;
+        }
+    }
+
+    private void setShips() {
+
+        Random rd = new Random();
+        while (true) {
+            try {
+
+                field.setShip(new Ship(new Point(rd.nextInt(8), rd.nextInt(8), ShipValue.DoubleDecked), Orientation.VERTICAL));
+                field.setShip(new Ship(new Point(rd.nextInt(8), rd.nextInt(8), ShipValue.DoubleDecked), Orientation.HORIZONTAL));
+                field.setShip(new Ship(new Point(rd.nextInt(8), rd.nextInt(8), ShipValue.FourDecked), Orientation.HORIZONTAL));
+                break;
+
+            } catch (Exception ignored) {
+            }
         }
     }
 
